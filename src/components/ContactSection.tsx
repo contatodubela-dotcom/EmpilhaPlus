@@ -1,14 +1,8 @@
 import React, { useState } from 'react';
+import emailjs from "emailjs-com"; 
 import { 
-  Phone, 
-  Mail, 
-  MapPin, 
-  MessageCircle, 
-  Send, 
-  Clock,
-  CheckCircle,
-  User,
-  Building
+  Phone, Mail, MapPin, MessageCircle, Send, Clock,
+  CheckCircle, User, Building
 } from 'lucide-react';
 
 const ContactSection = () => {
@@ -33,9 +27,29 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 3000);
+
+    emailjs.send(
+      "service_5okttm9",   // 👈 substitua pelo seu Service ID
+      "template_zrpxam8",  // 👈 substitua pelo seu Template ID
+      formData,
+      "YGeIhFHDyJAKD9VOq"    // 👈 substitua pela sua Public Key
+    )
+    .then(() => {
+      setIsSubmitted(true);
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        service: '',
+        message: ''
+      });
+      setTimeout(() => setIsSubmitted(false), 3000);
+    })
+    .catch((error) => {
+      console.error("Erro ao enviar:", error);
+      alert("Erro ao enviar mensagem. Tente novamente.");
+    });
   };
 
   const handleWhatsApp = () => {
@@ -52,6 +66,7 @@ const ContactSection = () => {
     'NR-12 - Máquinas e Equipamentos',
     'NR-18 - Construção Civil',
     'NR-33 - Espaços Confinados',
+    'NR-34 - Atividades com maçarico',
     'NR-35 - Trabalho em Altura',
     'Consultoria em Segurança',
     'Outros'
@@ -77,7 +92,6 @@ const ContactSection = () => {
             <div>
               <h3 className="text-2xl font-bold text-blue-800 mb-8">Fale Conosco</h3>
               
-              {/* Contact Methods */}
               <div className="space-y-6 mb-8">
                 <div className="flex items-center space-x-4">
                   <div className="bg-blue-800 w-12 h-12 rounded-lg flex items-center justify-center">
@@ -124,7 +138,6 @@ const ContactSection = () => {
                 </div>
               </div>
 
-              {/* WhatsApp Button */}
               <button
                 onClick={handleWhatsApp}
                 className="w-full bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-300 flex items-center justify-center space-x-2 mb-8"
@@ -133,7 +146,6 @@ const ContactSection = () => {
                 <span>Falar no WhatsApp</span>
               </button>
 
-              {/* Quick Contact Info */}
               <div className="bg-blue-800 rounded-xl p-6 text-white">
                 <h4 className="text-xl font-bold mb-4">Atendimento Rápido</h4>
                 <ul className="space-y-2 text-blue-100">
