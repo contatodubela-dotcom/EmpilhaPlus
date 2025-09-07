@@ -1,149 +1,149 @@
-import React from 'react';
-import { Star, Quote, Building, User } from 'lucide-react';
+import { Award, FileText, Shield, CheckCircle, Download, Users } from 'lucide-react';
 
-const TestimonialsSection = () => {
-  const testimonials = [
+const CertificationSection = () => {
+  const documents = [
     {
-      name: 'João Silva',
-      position: 'Operador de Empilhadeira',
-      company: 'Logística Brasil Ltda',
-      rating: 5,
-      text: 'O treinamento da Empilha+Plus foi fundamental para minha carreira. Saí do curso preparado para trabalhar com segurança e confiança. Os instrutores são excelentes!',
-      type: 'individual'
+      title: 'ASO - Atestado de Saúde Ocupacional',
+      description: 'Documento médico que comprova a aptidão do trabalhador para a função.',
+      icon: FileText
     },
     {
-      name: 'Ana Costa',
-      position: 'Técnica de Segurança',
-      company: 'Indústria ABC S.A.',
-      rating: 5,
-      text: 'Contratamos a Empilha+Plus para treinar nossa equipe em NR-35. O resultado foi excelente! Reduzimos significativamente os incidentes de trabalho em altura.',
-      type: 'company'
+      title: 'Ficha de EPI',
+      description: 'Registro de entrega e uso de Equipamentos de Proteção Individual.',
+      icon: Shield
     },
     {
-      name: 'Carlos Mendes',
-      position: 'Supervisor de Produção',
-      company: 'Construtech Engenharia',
-      rating: 5,
-      text: 'Profissionais muito competentes e comprometidos. O treinamento em NR-18 foi completo e prático. Recomendo para todas as empresas do setor.',
-      type: 'company'
-    },
-    {
-      name: 'Maria Oliveira',
-      position: 'Operadora Industrial',
-      company: 'Metalúrgica São Paulo',
-      rating: 5,
-      text: 'Consegui meu emprego graças ao certificado da Empilha+Plus. O treinamento me deu toda a base teórica e prática que precisava. Muito obrigada!',
-      type: 'individual'
-    },
-    {
-      name: 'Roberto Santos',
-      position: 'Gerente de RH',
-      company: 'Transportes Rápidos Ltda',
-      rating: 5,
-      text: 'Parceria de longa data com a Empilha+Plus. Sempre prestam um serviço de qualidade e nossos funcionários ficam muito bem preparados.',
-      type: 'company'
-    },
-    {
-      name: 'Lucas Pereira',
-      position: 'Almoxarife',
-      company: 'Distribuidora Central',
-      rating: 5,
-      text: 'Fiz o curso de operação de empilhadeira e hoje trabalho em uma empresa excelente. O treinamento realmente abriu portas na minha vida profissional.',
-      type: 'individual'
+      title: 'Certificado de Conclusão',
+      description: 'Certificado oficial de conclusão do treinamento, reconhecido nacionalmente.',
+      icon: Award
     }
   ];
 
-  const renderStars = (rating: number) => {
-    return Array.from({ length: 5 }, (_, index) => (
-      <Star
-        key={index}
-        size={16}
-        className={index < rating ? 'text-yellow-500 fill-current' : 'text-gray-300'}
-      />
-    ));
+  const certificationFeatures = [
+    'Certificados digitais e impressos',
+    'Registro no sistema do Ministério do Trabalho',
+    'Validade conforme legislação vigente',
+    'Consulta online de autenticidade',
+    'Renovação com desconto especial',
+    'Suporte técnico permanente'
+  ];
+
+  const handleOpenCertificate = () => {
+    // Abre o PDF em nova aba
+    const pdfUrl = '/exemplo-certificado.pdf'; // coloque o PDF dentro da pasta public
+    const newWindow = window.open(pdfUrl, '_blank', 'noopener,noreferrer');
+    if (newWindow) newWindow.focus();
   };
 
   return (
-    <section id="testimonials" className="py-20 bg-white">
+    <section id="certification" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-blue-800 mb-6">
-              O Que Nossos Alunos Dizem
+              Documentação e Certificação
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Veja os depoimentos de profissionais que transformaram suas carreiras e empresas que 
-              melhoraram sua segurança com nossos treinamentos.
+              Todos os nossos cursos são certificados e seguem rigorosamente as normas do Ministério do Trabalho, 
+              garantindo a validade e reconhecimento em todo território nacional.
             </p>
           </div>
 
-          {/* Stats */}
-          <div className="grid md:grid-cols-4 gap-6 mb-16">
+          {/* Certification Promise */}
+          <div className="bg-gradient-to-r from-blue-800 to-blue-900 rounded-2xl p-8 lg:p-12 text-white mb-16">
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-800 mb-2">98%</div>
-              <div className="text-gray-600">Satisfação dos Alunos</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-blue-800 mb-2">500+</div>
-              <div className="text-gray-600">Profissionais Formados</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-blue-800 mb-2">150+</div>
-              <div className="text-gray-600">Empresas Atendidas</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-blue-800 mb-2">4.9</div>
-              <div className="text-gray-600 flex items-center justify-center space-x-1">
-                <span>Avaliação</span>
-                {renderStars(5)}
+              <Award className="text-yellow-400 mx-auto mb-6" size={64} />
+              <h3 className="text-3xl font-bold mb-4">100% Certificados</h3>
+              <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
+                Garantimos que todos os participantes que concluírem nossos treinamentos receberão 
+                certificação oficial, válida em todo o Brasil e reconhecida pelos órgãos competentes.
+              </p>
+              
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                  <Users className="text-yellow-400 mx-auto mb-4" size={40} />
+                  <h4 className="text-xl font-semibold mb-2">500+</h4>
+                  <p className="text-blue-200">Profissionais Certificados</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                  <CheckCircle className="text-yellow-400 mx-auto mb-4" size={40} />
+                  <h4 className="text-xl font-semibold mb-2">100%</h4>
+                  <p className="text-blue-200">Taxa de Aprovação</p>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                  <Award className="text-yellow-400 mx-auto mb-4" size={40} />
+                  <h4 className="text-xl font-semibold mb-2">15+</h4>
+                  <p className="text-blue-200">Tipos de Certificados</p>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Testimonials Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition-shadow duration-300 relative">
-                <Quote className="text-blue-200 absolute top-4 right-4" size={32} />
-                
-                <div className="flex items-center space-x-1 mb-4">
-                  {renderStars(testimonial.rating)}
-                </div>
-                
-                <p className="text-gray-700 mb-6 leading-relaxed italic">
-                  "{testimonial.text}"
+          {/* Document Types */}
+          <div className="mb-16">
+            <h3 className="text-3xl font-bold text-blue-800 text-center mb-12">Documentação Emitida</h3>
+            <div className="grid md:grid-cols-3 gap-8">
+              {documents.map((doc, index) => {
+                const IconComponent = doc.icon;
+                return (
+                  <div key={index} className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 text-center group">
+                    <div className="bg-blue-800 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-yellow-500 transition-colors duration-300">
+                      <IconComponent className="text-white" size={32} />
+                    </div>
+                    <h4 className="text-xl font-semibold text-blue-800 mb-4">{doc.title}</h4>
+                    <p className="text-gray-600 leading-relaxed">{doc.description}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Certification Features */}
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h3 className="text-3xl font-bold text-blue-800 mb-6">Diferenciais da Nossa Certificação</h3>
+              <div className="space-y-4">
+                {certificationFeatures.map((feature, index) => (
+                  <div key={index} className="flex items-center space-x-3">
+                    <CheckCircle className="text-yellow-500 flex-shrink-0" size={24} />
+                    <span className="text-gray-700 text-lg">{feature}</span>
+                  </div>
+                ))}
+              </div>
+              
+              <div className="mt-8">
+                <button
+                  onClick={handleOpenCertificate}
+                  className="bg-blue-800 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-300 flex items-center space-x-2"
+                >
+                  <Download size={24} />
+                  <span>Visualizar Exemplo de Certificado</span>
+                </button>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-yellow-200">
+              <div className="text-center">
+                <Shield className="text-blue-800 mx-auto mb-6" size={64} />
+                <h4 className="text-2xl font-bold text-blue-800 mb-4">Garantia de Qualidade</h4>
+                <p className="text-gray-700 mb-6 leading-relaxed">
+                  Nossos certificados são emitidos em conformidade com as exigências legais e 
+                  possuem QR Code para verificação de autenticidade online.
                 </p>
                 
-                <div className="flex items-center space-x-3">
-                  <div className="bg-blue-800 w-12 h-12 rounded-full flex items-center justify-center">
-                    {testimonial.type === 'company' ? (
-                      <Building className="text-white" size={20} />
-                    ) : (
-                      <User className="text-white" size={20} />
-                    )}
-                  </div>
-                  <div>
-                    <div className="font-semibold text-blue-800">{testimonial.name}</div>
-                    <div className="text-sm text-gray-600">{testimonial.position}</div>
-                    <div className="text-sm text-gray-500">{testimonial.company}</div>
-                  </div>
+                <div className="bg-gray-50 p-6 rounded-xl">
+                  <h5 className="font-semibold text-blue-800 mb-3">Informações do Certificado:</h5>
+                  <ul className="text-sm text-gray-600 space-y-2 text-left">
+                    <li>• Número de registro único</li>
+                    <li>• Data de emissão e validade</li>
+                    <li>• Carga horária completa</li>
+                    <li>• Assinatura digital do instrutor</li>
+                    <li>• Selo de autenticidade</li>
+                    <li>• QR Code para verificação</li>
+                  </ul>
                 </div>
               </div>
-            ))}
-          </div>
-
-          {/* Call to Action */}
-          <div className="text-center mt-16">
-            <div className="bg-gradient-to-r from-blue-800 to-blue-900 rounded-2xl p-8 lg:p-12 text-white">
-              <h3 className="text-3xl font-bold mb-4">Seja o Próximo Sucesso!</h3>
-              <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
-                Junte-se aos centenas de profissionais que já transformaram suas carreiras com nossos treinamentos. 
-                Sua oportunidade de crescimento está aqui!
-              </p>
-              <button className="bg-yellow-500 hover:bg-yellow-400 text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-300">
-                Comece Agora Seu Treinamento
-              </button>
             </div>
           </div>
         </div>
@@ -152,4 +152,4 @@ const TestimonialsSection = () => {
   );
 };
 
-export default TestimonialsSection;
+export default CertificationSection;

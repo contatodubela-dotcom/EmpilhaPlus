@@ -110,7 +110,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-800">E-mail</h4>
-                    <p className="text-gray-600">contato@empilhaplus.com.br</p>
+                    <p className="text-gray-600">empilhaplustreinamentos@gmail.com</p>
                     <p className="text-sm text-gray-500">Resposta em até 24h</p>
                   </div>
                 </div>
@@ -121,8 +121,8 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-800">Endereço</h4>
-                    <p className="text-gray-600">Rua da Segurança, 123</p>
-                    <p className="text-gray-600">São Paulo, SP - CEP 01234-567</p>
+                    <p className="text-gray-600">Av Brasil, 12.055</p>
+                    <p className="text-gray-600">Rio de Janeiro, RJ - CEP 21012-351</p>
                   </div>
                 </div>
 

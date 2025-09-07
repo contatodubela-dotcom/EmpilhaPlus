@@ -1,4 +1,3 @@
-import React from 'react';
 import { 
   Shield, 
   HardHat, 
@@ -69,6 +68,12 @@ const TrainingSection = () => {
       participants: 'Até 15'
     }
   ];
+
+  // Função para abrir WhatsApp
+  const handleWhatsApp = () => {
+    const message = encodeURIComponent('Olá, quero saber mais sobre o treinamento de Operador de Empilhadeira!');
+    window.open(`https://wa.me/5521982134226?text=${message}`, '_blank');
+  };
 
   return (
     <section id="training" className="py-20 bg-white">
@@ -152,7 +157,10 @@ const TrainingSection = () => {
                   </div>
                 </div>
                 
-                <button className="bg-yellow-500 hover:bg-yellow-400 text-blue-900 px-8 py-3 rounded-lg font-semibold text-lg transition-colors duration-300">
+                <button
+                  onClick={handleWhatsApp}
+                  className="bg-yellow-500 hover:bg-yellow-400 text-blue-900 px-8 py-3 rounded-lg font-semibold text-lg transition-colors duration-300"
+                >
                   Saiba Mais
                 </button>
               </div>

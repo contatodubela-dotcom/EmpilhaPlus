@@ -1,4 +1,3 @@
-import React from 'react';
 import { MessageCircle, Download, Award, Users, Shield } from 'lucide-react';
 
 const HeroSection = () => {
@@ -10,16 +9,22 @@ const HeroSection = () => {
   };
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/5521982134226?text=Olá! Gostaria de saber mais sobre os treinamentos da Empilha+Plus.', '_blank');
+    window.open(
+      'https://wa.me/5521982134226?text=Olá! Gostaria de saber mais sobre os treinamentos da Empilha+Plus.',
+      '_blank'
+    );
   };
 
   const handleDownloadCatalog = () => {
-    // Simulação de download - em produção seria um link real para o PDF
-    alert('Download do catálogo iniciado!');
+    // Agora abre o catálogo real em nova aba
+    window.open("/catalogo-empilhaplus.pdf", "_blank");
   };
 
   return (
-    <section id="home" className="bg-gradient-to-br from-blue-800 via-blue-700 to-blue-900 text-white py-20 lg:py-32">
+    <section
+      id="home"
+      className="bg-gradient-to-br from-blue-800 via-blue-700 to-blue-900 text-white py-20 lg:py-32"
+    >
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           {/* Main Headline */}
@@ -70,7 +75,7 @@ const HeroSection = () => {
               <MessageCircle size={24} />
               <span>Fale Conosco</span>
             </button>
-            
+
             <button
               onClick={scrollToContact}
               className="border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 w-full sm:w-auto"

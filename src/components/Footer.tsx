@@ -1,4 +1,3 @@
-import React from 'react';
 import { 
   Phone, 
   Mail, 
@@ -18,6 +17,8 @@ const Footer = () => {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  const whatsappLink = 'https://wa.me/5521982134226?text=Olá,%20quero%20saber%20mais%20sobre%20os%20treinamentos!';
 
   return (
     <footer className="bg-blue-900 text-white">
@@ -64,7 +65,7 @@ const Footer = () => {
               <a href="#" className="bg-blue-800 hover:bg-yellow-500 p-2 rounded-lg transition-colors duration-300 group">
                 <Linkedin className="group-hover:text-blue-900" size={20} />
               </a>
-              <a href="#" className="bg-green-600 hover:bg-green-700 p-2 rounded-lg transition-colors duration-300">
+              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="bg-green-600 hover:bg-green-700 p-2 rounded-lg transition-colors duration-300">
                 <MessageCircle size={20} />
               </a>
             </div>
@@ -140,9 +141,9 @@ const Footer = () => {
               <li className="flex items-start space-x-3">
                 <MapPin className="text-yellow-400 flex-shrink-0 mt-1" size={18} />
                 <div className="text-blue-100">
-                  <p>Rua da Segurança, 123</p>
-                  <p>São Paulo, SP</p>
-                  <p>CEP 01234-567</p>
+                  <p>Av. Brasil, 12.055</p>
+                  <p>Rio de Janeiro/RJ</p>
+                  <p>CEP: 21012-351</p>
                 </div>
               </li>
             </ul>
@@ -187,13 +188,29 @@ const Footer = () => {
       <div className="bg-blue-950 py-4">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-blue-200">
-            <p>© 2024 Empilha+Plus Treinamentos. Todos os direitos reservados.</p>
-            <div className="flex space-x-4 mt-2 md:mt-0">
-              <a href="#" className="hover:text-yellow-400 transition-colors">Política de Privacidade</a>
+            <p>© 2025 Empilha+Plus Treinamentos. Todos os direitos reservados.</p>
+            <div className="flex flex-wrap gap-4 mt-2 md:mt-0">
+              <a 
+                href="/privacy-policy" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="hover:text-yellow-400 transition-colors"
+              >
+                Política de Privacidade
+              </a>
               <span>•</span>
-              <a href="#" className="hover:text-yellow-400 transition-colors">Termos de Uso</a>
+              <a 
+                href="/terms-of-use" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="hover:text-yellow-400 transition-colors"
+              >
+                Termos de Uso
+              </a>
               <span>•</span>
-              <a href="#" className="hover:text-yellow-400 transition-colors">CNPJ: 00.000.000/0001-00</a>
+              <span>CNPJ: 35.077.899/0001-25</span>
+              <span>•</span>
+              <span>Av. Brasil, 12.055 - Rio de Janeiro/RJ</span>
             </div>
           </div>
         </div>

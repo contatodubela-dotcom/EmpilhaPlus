@@ -1,4 +1,3 @@
-import React from 'react';
 import { Target, Shield, Users, Award, CheckCircle } from 'lucide-react';
 
 const AboutSection = () => {

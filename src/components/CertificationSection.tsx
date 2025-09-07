@@ -1,4 +1,3 @@
-import React from 'react';
 import { Award, FileText, Shield, CheckCircle, Download, Users } from 'lucide-react';
 
 const CertificationSection = () => {
@@ -107,10 +106,16 @@ const CertificationSection = () => {
               </div>
               
               <div className="mt-8">
-                <button className="bg-blue-800 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-300 flex items-center space-x-2">
+                <a
+                  href="/exemplo-certificado.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download
+                  className="bg-blue-800 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-300 items-center space-x-2 inline-flex"
+                >
                   <Download size={24} />
                   <span>Baixar Exemplo de Certificado</span>
-                </button>
+                </a>
               </div>
             </div>
 
